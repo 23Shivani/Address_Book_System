@@ -1,6 +1,7 @@
 package com.bridgelabz.main;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class AddressBook {
 	Contacts contact = new Contacts();
@@ -69,4 +70,11 @@ public class AddressBook {
 			contact = null;
 		}
 	}
+	
+	//Show
+	
+	public void showContact() {
+		System.out.println(contact.toString());
+	}
+
 }
