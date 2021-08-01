@@ -42,8 +42,10 @@ public class AddressBook {
 		System.out.println(contact);
 	}
 	
+	//editing
+	
 	public void editContact() {
-		System.out.println("Enter First Name of Persion");
+		System.out.println("Enter First Name of Person");
 		String editName = sc.nextLine();
 		if (editName.equalsIgnoreCase(contact.firstName)) {
 			add();
@@ -54,5 +56,17 @@ public class AddressBook {
 			editContact();
 		}
 
+	}
+	
+	//deleting
+	
+	public void delete() {
+		System.out.println("Enter First Name of Person");
+		String editName = sc.nextLine();
+		if (editName.equals(contact.firstName)) {
+			System.out.println("you deleted " + contact.firstName + " data");
+
+			contact = null;
+		}
 	}
 }
