@@ -7,7 +7,7 @@ public class AddressBookMain {
 		AddressBook myObj = new AddressBook();
 		System.out.println("Welcome to Address Book System");
 		Scanner sc = new Scanner(System.in);
-		System.out.println("1.Add ");
+		System.out.println("1.Edit ");
 		int input = sc.nextInt();
 		switch (input) {
 		case 1:

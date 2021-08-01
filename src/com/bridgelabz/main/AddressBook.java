@@ -7,8 +7,6 @@ public class AddressBook {
 	Scanner sc = new Scanner(System.in);
 
 	public void add() {
-
-		
 		
 		//Takes input from user
 		
@@ -42,5 +40,19 @@ public class AddressBook {
 		contact.setPhoneNumber(phoneNum);
 		contact.setEmail(email);
 		System.out.println(contact);
+	}
+	
+	public void editContact() {
+		System.out.println("Enter First Name of Persion");
+		String editName = sc.nextLine();
+		if (editName.equalsIgnoreCase(contact.firstName)) {
+			add();
+			// System.out.println(contact);
+		} else {
+			System.out.println("Invalid Name......!");
+			System.out.println("Please enter valid First Name");
+			editContact();
+		}
+
 	}
 }
