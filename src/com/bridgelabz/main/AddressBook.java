@@ -24,12 +24,14 @@ public class AddressBook {
 		return contactList.stream().filter(person -> person.getFirstName().equalsIgnoreCase(name))
 				.collect(Collectors.toList());
 	}
-
+	
+	// method for search contact by name
 	public List<Contacts> searchByCity(String city) {
 		return contactList.stream().filter(person -> person.getCity().equalsIgnoreCase(city))
 				.collect(Collectors.toList());
 	}
-
+	
+	// method for edit contact
 	public List<Contacts> searchByState(String state) {
 		return contactList.stream().filter(person -> person.getState().equalsIgnoreCase(state))
 				.collect(Collectors.toList());
