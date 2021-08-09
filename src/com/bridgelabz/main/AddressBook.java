@@ -1,8 +1,8 @@
 package com.bridgelabz.main;
-
+import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,11 +11,11 @@ import java.util.stream.Collectors;
 
 
 public class AddressBook {
+	
 	public static final ArrayList<Contacts> contactList = new ArrayList<>();
 	public static Map<String, Contacts> nameHashMap = new HashMap<String, Contacts>();
 	public static Map<String, Contacts> cityHashMap = new HashMap<String, Contacts>();
 	public static Map<String, Contacts> stateHashMap = new HashMap<String, Contacts>();
-
 	static Scanner sc = new Scanner(System.in);
 	static AddressBook addressBook = new AddressBook();
 
@@ -145,7 +145,6 @@ public class AddressBook {
 			switch (choice) {
 			case 1:
 				if (addContact(readContact())) // call addcontact with passing method readcontact
-
 					System.out.println("Cotact Added Successfully....!");
 				else
 					System.out.println("Contact Already Exist....!");
@@ -270,7 +269,7 @@ public class AddressBook {
 		switch (choice) {
 		case 1:
 			Map<String, Long> countCity = contactList.stream()
-					.collect(Collectors.groupingBy(e-> e.getCity(), Collectors.counting()));
+					.collect(Collectors.groupingBy(e -> e.getCity(), Collectors.counting()));
 			System.out.println(countCity + "\n");
 			break;
 		case 2:
@@ -301,7 +300,8 @@ public class AddressBook {
 			addressBook.sortBy(Contacts::getFirstName).forEach(System.out::println);
 			break;
 		case 2:
-			addressBook.sortBy(Contacts::getFirstName).forEach(System.out::println);
+			addressBook.sortBy(Contacts::getLastName).forEach(System.out::println);
+		
 			break;
 		case 3:
 			addressBook.sortBy(Contacts::getCity).forEach(System.out::println);
